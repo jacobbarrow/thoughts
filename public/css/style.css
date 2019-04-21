@@ -48,6 +48,18 @@ a:hover {
     color: #1b5e20;
 }
 
+blockquote {
+    margin: 1em 0;
+    padding: 1em;
+    font-style: italic;
+    border-left: #2e7d32 4px solid;
+    color: #2e7d32;
+}
+
+blockquote > * {
+    margin: 0;
+}
+
 strong {
     color: #2e7d32;
 }
