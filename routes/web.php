@@ -11,18 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('posts.index');
-})->name('index');
+Route::get('/', 'PostController@index')->name('index');
 
-Route::get('/some-blog-post', function() {
-    $post = [
-        'title' => 'on McDonald\'s Monopoly',
-        'text' => '<p>Hello</p>'
-    ];
-    return view('posts.show', compact('post'));
-});
 
-Route::get('/create', function() {
-    return view('admin.index');
-});
+Route::get('/create', 'PostController@create')->name('create');
+
+Route::post('/create', 'PostController@store');
+
+Route::get('/{post}', 'PostController@show')->name('show');
+
+Route::delete('/{post}', 'PostController@delete')->name('delete');
