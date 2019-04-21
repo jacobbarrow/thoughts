@@ -23,5 +23,9 @@
 
 @section('scripts')
     <script src="/js/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>tinymce.init({
+            selector:'textarea',
+            plugins: 'code link image anchor',
+            toolbar: 'undo redo | styleselect | bold code | link image | anchor code'
+    });</script>
 @endsection
