@@ -9,7 +9,7 @@
     <link href="/css/form.css" rel="stylesheet">
 </head>
 <body>
-<h1>thoughts</h1>
+<a href="{{ route('index') }}"><h1>thoughts</h1></a>
 @yield('content')
 @yield('scripts')
 </body>

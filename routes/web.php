@@ -13,11 +13,21 @@
 
 Route::get('/', 'PostController@index')->name('index');
 
+Route::get('/create', 'PostController@create')->name('create')->middleware('isLoggedIn');
+Route::post('/create', 'PostController@store')->middleware('isLoggedIn');
 
-Route::get('/create', 'PostController@create')->name('create');
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
-Route::post('/create', 'PostController@store');
+Route::post('/login', function (\Illuminate\Http\Request $request) {
+    if($request->secret === env('SECRET')) {
+        session(['secret' => env('SECRET')]);
+        return redirect(route('create'));
+    } else {
+        return back()->withErrors('Incorrect Secret');
+    }
+});
 
 Route::get('/{post}', 'PostController@show')->name('show');
-
 Route::delete('/{post}', 'PostController@delete')->name('delete');

@@ -1,4 +1,4 @@
 # Thoughts
 ##### An incredibly lightweight blog engine
 
-Made using both sluggable and tinymce
+Would not suggest using this for anything too beefy.

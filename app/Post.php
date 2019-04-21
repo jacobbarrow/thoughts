@@ -9,6 +9,7 @@ use Spatie\Sluggable\SlugOptions;
 class Post extends Model
 {
     protected $guarded = [];
+    protected $dates = ['created_at'];
     use HasSlug;
 
     public function getSlugOptions() : SlugOptions

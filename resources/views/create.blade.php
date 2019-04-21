@@ -11,11 +11,14 @@
         <input type="submit">
     </form>
     <h4>Posts</h4>
-    <form method="post" action="/some-post">
-        <p>on Some Thought <input type="submit" value="Delete"></p>
-        <input type="hidden" name="_method" value="DELETE" >
-        @csrf
-    </form>
+    @foreach(App\Post::all() as $post)
+        <form method="post" action="{{ route('delete', $post) }}">
+            @csrf
+            <input type="hidden" name="_method" value="DELETE" >
+            <p>{{ $post->title }} <input type="submit" value="Delete"></p>
+        </form>
+    @endforeach
+
 @endsection
 
 @section('scripts')
