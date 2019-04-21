@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('posts.index');
 })->name('index');
 
 Route::get('/some-blog-post', function() {
@@ -20,5 +20,9 @@ Route::get('/some-blog-post', function() {
         'title' => 'on McDonald\'s Monopoly',
         'text' => '<p>Hello</p>'
     ];
-    return view('show', compact('post'));
+    return view('posts.show', compact('post'));
+});
+
+Route::get('/create', function() {
+    return view('admin.index');
 });

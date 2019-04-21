@@ -1,0 +1,16 @@
+label {
+    display: block;
+    color: #1b5e20;
+    margin: 1.8em 0 0.1em 0;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+input[type=text] {
+    width: 100%;
+    line-height: 1.8em;
+}
+
+input[type=submit] {
+    margin-top: 1em;
+    line-height: 1.8em;
+}

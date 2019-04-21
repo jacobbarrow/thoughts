@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     color: #333;
     font-family: 'Roboto Slab', serif;
@@ -52,7 +56,6 @@ article {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
     background: #e8f5e9;
     padding: 2em;
     margin: 2em auto;
