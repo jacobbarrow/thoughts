@@ -1,0 +1,68 @@
+body {
+    color: #333;
+    font-family: 'Roboto Slab', serif;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+
+}
+
+h1, h2, h3 {
+    color: #1b5e20;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-weight: 400;
+}
+
+h1 {
+    margin: 0.6em 0 0.1em 0;
+    font-size: 5em;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.6em;
+    margin: 0;
+}
+
+p {
+    margin: 1em auto;
+    line-height: 1.6em;
+}
+
+a {
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1b5e20;
+}
+
+strong {
+    color: #2e7d32;
+}
+
+article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background: #e8f5e9;
+    padding: 2em;
+    margin: 2em auto;
+}
+
+.date {
+    font-size: 1.2em;
+    color: #2e7d32;
+}
+
+span {
+    font-size: 0.8em;
+}

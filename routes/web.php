@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+})->name('index');
+
+Route::get('/some-blog-post', function() {
+    $post = [
+        'title' => 'on McDonald\'s Monopoly',
+        'text' => '<p>Hello</p>'
+    ];
+    return view('show', compact('post'));
 });
