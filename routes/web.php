@@ -30,4 +30,4 @@ Route::post('/login', function (\Illuminate\Http\Request $request) {
 });
 
 Route::get('/{post}', 'PostController@show')->name('show');
-Route::delete('/{post}', 'PostController@delete')->name('delete');
+Route::delete('/{post}', 'PostController@delete')->name('delete')->middleware('isLoggedIn');
