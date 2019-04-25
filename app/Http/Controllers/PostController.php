@@ -29,6 +29,19 @@ class PostController extends Controller
         return redirect(route('show', $post));
     }
 
+    public function edit(Post $post) {
+        return view('edit', compact('post'));
+    }
+
+    public function update(Post $post, Request $request) {
+        $post->title = $request->title;
+        $post->text = $request->text;
+
+        $post->save();
+
+        return redirect(route('show', $post));
+    }
+
     public function delete(Post $post) {
         $post->delete();
         return back();

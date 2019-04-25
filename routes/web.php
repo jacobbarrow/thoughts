@@ -16,6 +16,7 @@ Route::get('/', 'PostController@index')->name('index');
 Route::get('/create', 'PostController@create')->name('create')->middleware('isLoggedIn');
 Route::post('/create', 'PostController@store')->middleware('isLoggedIn');
 
+
 Route::get('/login', function () {
     return view('login');
 })->name('login');
@@ -31,3 +32,6 @@ Route::post('/login', function (\Illuminate\Http\Request $request) {
 
 Route::get('/{post}', 'PostController@show')->name('show');
 Route::delete('/{post}', 'PostController@delete')->name('delete')->middleware('isLoggedIn');
+
+Route::get('/{post}/edit', 'PostController@edit')->name('edit')->middleware('isLoggedIn');
+Route::post('/{post}/edit', 'PostController@update')->middleware('isLoggedIn');

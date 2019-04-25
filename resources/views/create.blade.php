@@ -15,7 +15,7 @@
         <form method="post" action="{{ route('delete', $post) }}">
             @csrf
             <input type="hidden" name="_method" value="DELETE" >
-            <p>{{ $post->title }} <input type="submit" value="Delete"></p>
+            <p><a href="{{ route('show', $post) }}">{{ $post->title }}</a> <input type="submit" value="Delete"> <a href="{{ route('edit', $post) }}">edit</a></p>
         </form>
     @endforeach
 
