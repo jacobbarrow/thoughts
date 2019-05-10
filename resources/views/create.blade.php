@@ -12,11 +12,20 @@
     </form>
     <h4>Posts</h4>
     @foreach(App\Post::all() as $post)
-        <form method="post" action="{{ route('delete', $post) }}">
-            @csrf
-            <input type="hidden" name="_method" value="DELETE" >
-            <p><a href="{{ route('show', $post) }}">{{ $post->title }}</a> <input type="submit" value="Delete"> <a href="{{ route('edit', $post) }}">edit</a></p>
-        </form>
+        <div class="post">
+            <a href="{{ route('show', $post) }}">{{ $post->title }}</a>
+            <form method="post" action="{{ route('delete', $post) }}">
+                @csrf
+                <input type="hidden" name="_method" value="DELETE" >
+                <input type="submit" value="Delete">
+            </form>
+            <a href="{{ route('edit', $post) }}">edit</a>
+            <form method="post" action="{{ route('toggle_draft', $post) }}">
+                @csrf
+                <input type="submit" value="{{ $post->is_draft ? 'Make Public' : 'Make Draft' }}">
+            </form>
+        </div>
+
     @endforeach
 
 @endsection

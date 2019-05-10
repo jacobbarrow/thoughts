@@ -35,3 +35,5 @@ Route::delete('/{post}', 'PostController@delete')->name('delete')->middleware('i
 
 Route::get('/{post}/edit', 'PostController@edit')->name('edit')->middleware('isLoggedIn');
 Route::post('/{post}/edit', 'PostController@update')->middleware('isLoggedIn');
+
+Route::post('/{post}/toggle', 'PostController@toggleDraft')->name('toggle_draft')->middleware('isLoggedIn');

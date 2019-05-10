@@ -42,6 +42,13 @@ class PostController extends Controller
         return redirect(route('show', $post));
     }
 
+    public function toggleDraft(Post $post) {
+        $post->is_draft = !$post->is_draft;
+        $post->save();
+
+        return back();
+    }
+
     public function delete(Post $post) {
         $post->delete();
         return back();
